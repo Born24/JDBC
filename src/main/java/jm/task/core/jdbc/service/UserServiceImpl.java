@@ -6,9 +6,10 @@ import jm.task.core.jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserDaoJDBCImpl userDao;
+    private final UserDaoJDBCImpl userDao;
 
     public UserServiceImpl() {
+
         userDao = new UserDaoJDBCImpl();
     }
 
@@ -44,7 +45,4 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    public void closeConnection() {
-        userDao.closeConnection();
-    }
 }
